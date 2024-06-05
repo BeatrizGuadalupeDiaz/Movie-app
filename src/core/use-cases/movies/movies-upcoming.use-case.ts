@@ -3,11 +3,11 @@ import {NowPlayingResponse} from '../../../infrastructure/interfaces/movie-db.re
 import {Movie} from '../../entities/movie.entity';
 import {movieMapper} from '../../../infrastructure/mappers/movie.maper';
 
-export const moviesNowPlayingUseCase = async (
+export const moviesUpComingUseCase = async (
   fetcher: HttpAdapter,
 ): Promise<Movie[]> => {
   try {
-    const nowPlaying = await fetcher.get<NowPlayingResponse>('/now_playing');
+    const nowPlaying = await fetcher.get<NowPlayingResponse>('/upcoming');
     //console.log({nowPlaying}); //transformamos la data a un objeto de tipo Movie
     return nowPlaying.results.map(result =>
       movieMapper.fromMovieDBResultToEntity(result),

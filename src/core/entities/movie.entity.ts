@@ -4,7 +4,7 @@ export interface Movie {
   title: string;
   description: string;
   releaseDate: Date;
-  rating: string;
+  rating: number;
   poster: string;
-  backdrop: number;
+  backdrop: string;
 }
