@@ -1,10 +1,10 @@
 import {createStackNavigator} from '@react-navigation/stack';
-import {HomeScreens} from '../screens/home/HomeScreens';
+import {HomeScreens} from '../screens/home/HomeScreen';
 import {DetailsScreen} from '../screens/details/DetailsScreen';
 
 export type RootStackParams = {
   Home: undefined;
-  Details: undefined;
+  Details: {moviId: number};
 };
 const Stack = createStackNavigator<RootStackParams>();
 
