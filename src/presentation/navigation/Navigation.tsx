@@ -1,3 +1,4 @@
+import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {HomeScreens} from '../screens/home/HomeScreen';
 import {DetailsScreen} from '../screens/details/DetailsScreen';

@@ -56,11 +56,11 @@ export const useMovies = () => {
     //Methods
     popularNextPage: async () => {
       POPULAR_PAGE++;
-      const popularMovies = await UseCases.moviesPopularUseCase(MovieDBFecher,{
+      const popularMovies = await UseCases.moviesPopularUseCase(MovieDBFecher, {
         page: POPULAR_PAGE,
       });
 
-      setPopular(prev => [...prev, ...popularMovies])
+      setPopular(prev => [...prev, ...popularMovies]);
     },
   };
 };

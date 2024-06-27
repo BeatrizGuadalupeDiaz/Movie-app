@@ -3,19 +3,19 @@ import {MoviePopularResponse} from '../../../infrastructure/interfaces/movie-db.
 import {Movie} from '../../entities/movie.entity';
 import {movieMapper} from '../../../infrastructure/mappers/movie.maper';
 
-type Options ={
+type Options = {
   page?: number;
   limit?: number;
-}
+};
 export const moviesPopularUseCase = async (
   fetcher: HttpAdapter,
   options?: Options,
 ): Promise<Movie[]> => {
   try {
-    const popular = await fetcher.get<MoviePopularResponse>('/popular',{
-      params:{
+    const popular = await fetcher.get<MoviePopularResponse>('/popular', {
+      params: {
         page: options?.page ?? 1,
-      }
+      },
     });
     //console.log({nowPlaying}); //transformamos la data a un objeto de tipo Movie
     return popular.results.map(result =>
